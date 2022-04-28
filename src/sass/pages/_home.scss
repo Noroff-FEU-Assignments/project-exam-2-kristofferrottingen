@@ -1,0 +1,61 @@
+.hero-section{
+    background-image: url(../../images/hero-img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60vh;
+    overflow: hidden!important;
+    position: relative;
+
+    .hero-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 70%;
+
+        img{
+            max-width: 200px;
+            -webkit-filter: drop-shadow(2px 3px 5px $shadow-color);
+            filter: drop-shadow(2px 3px 5px $shadow-color);
+        }
+
+        h1{
+            color: white;
+            text-transform: uppercase;
+            padding-top: 20px;
+            font-family: $primary-font;
+            text-shadow: 2px 3px 5px $shadow-color;
+        }
+
+        .btn-brown{
+            background-color: $third-color;
+            color: $secondary-color;
+            padding: 10px 25px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+
+            &:hover{
+                transition: all 0.2s ease;
+                background-color: $secondary-color;
+                color: $third-color;
+                box-shadow: 2px 3px 5px $shadow-color;
+            }
+        }
+    }
+
+    .overlay{
+        background-image: url(../../images/hero-cover.svg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        position: absolute;
+        bottom: 0%;
+        width: 105%;
+        left: -9px;
+        height: 230px;
+        overflow: hidden;
+        display: block;
+    }
+}

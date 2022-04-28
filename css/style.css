@@ -1,0 +1,40 @@
+/* colors ----->  */
+/* Fonts ----->  */
+.hero-section {
+  background-image: url(../../images/hero-img.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 60vh;
+}
+
+.hero-section .hero-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 70%;
+}
+
+.hero-section .hero-content img {
+  max-width: 200px;
+  -webkit-filter: drop-shadow(2px 3px 5px #555);
+  filter: drop-shadow(2px 3px 5px #555);
+}
+
+.hero-section .hero-content h1 {
+  color: white;
+  text-transform: uppercase;
+  padding-top: 20px;
+  font-family: "Montserrat", sans-serif;
+  text-shadow: 2px 3px 5px #555;
+}
+/*# sourceMappingURL=style.css.map */
