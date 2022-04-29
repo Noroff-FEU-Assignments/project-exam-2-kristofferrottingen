@@ -1,0 +1,25 @@
+.product-card{
+    margin: 0 au;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: $primary-font;
+    background-color: $card-bg;
+    width: 270px;
+    height: 300px;
+    text-decoration: none;
+    color: $secondary-color;
+
+    img{
+        width: 200px;
+    }
+
+    h4{
+        font-size: 18px;
+    }
+
+    p{
+        font-size: 20px;
+    }
+}
