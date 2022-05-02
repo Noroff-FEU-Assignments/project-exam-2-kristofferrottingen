@@ -1,0 +1,50 @@
+.navbar{
+    background-color: $primary-color;
+}
+
+.offcanvas {
+    background-color: $primary-color !important;
+    color: $secondary-color;
+}
+
+.offcanvas-body{
+
+    .navbar-nav a{
+        color: $secondary-color;
+    
+        &::after{
+            content: '';
+            width: 100%;
+            height: 1px;
+            background-color: $secondary-color;
+            display: inline-block;
+        }
+    }
+}
+
+.navbar-dark .web-nav .nav-link:focus, .navbar-dark .web-nav .nav-link:hover{
+    color: $third-color !important;
+}
+
+.web-nav a{
+    color: $secondary-color !important;
+    transition: all 0.1s ease;
+
+    .icons{
+        font-size: 27px;
+    }
+
+    .fa-1{
+        padding-left: 25px;
+    }
+}
+
+
+.offcanvas-header .btn-close{
+    background-color: $secondary-color;
+}
+
+.navbar-light .navbar-toggler{
+    border: none;
+    border-color: none;
+}

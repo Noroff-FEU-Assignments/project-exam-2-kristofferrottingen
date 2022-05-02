@@ -166,3 +166,96 @@
         }
     }
 }
+
+.about-section{
+    display: flex;
+    flex-direction: row;
+    height: 70vh;
+    background-image: url(../../images/om-oss-img.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+
+
+    .about-left{
+        display: flex;
+        flex-direction: column;
+        padding: 30px 30px 30px 50px;
+        width: 65%;
+        background-color: white;
+        clip-path: polygon(0 0, 100% 0, 75% 100%, 0px 100%);
+
+        .line-about{
+            content: '';
+            background: $primary-color;
+            height: 4px;
+            margin: 20px 0px;
+            width: 60%;
+        }
+
+        h2{
+            padding-top: 30px;
+            font-weight: 800;
+        }
+
+        p{
+            font-size: 15px;
+            max-width: 500px;
+            line-height: 30px;
+            padding-right: 90px;
+        }
+    }
+}
+
+
+.sos-section{
+    display: flex;
+    flex-direction: row-reverse;
+    height: 70vh;
+    background-image: url(../../images/sosial-img.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+
+
+    .sos-right{
+        display: flex;
+        flex-direction: column;
+        padding: 30px 30px 30px 290px;
+        width: 68.2%;
+        background-color: $third-color;
+        color: $secondary-color;
+        clip-path: polygon(25% 0px, 100% 0, 100% 100%, 0 100%);
+
+        .line-sos{
+            content: '';
+            background: $secondary-color;
+            height: 4px;
+            margin: 20px 0px;
+            width: 70%;
+        }
+
+        h2{
+            font-weight: 800;
+            padding-top: 30px;
+        }
+
+        p{
+            font-size: 15px;
+            max-width: 600px;
+            line-height: 30px;
+        }
+
+        .sos-right-socials{
+            width: 70%;
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 50px;
+
+            
+            svg{
+                font-size: 50px;
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './text/Heading';
-import Button from './Button';
-import heroImage from '../images/logo-stående.png';
+import Header from '../text/Heading';
+import Button from '../Button';
+import heroImage from '../../images/logo-stående.png';
 
 
 function Hero() {

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState, useEffect } from "react";
-import { homeProducts } from '../api/Api';
-import GetProducts from './GetProducts';
+import { homeProducts } from '../../api/Api';
+import GetProducts from '../GetProducts';
 
-function HomeProducts() {
+function HomeProducts() { 
   
     const [product,setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
