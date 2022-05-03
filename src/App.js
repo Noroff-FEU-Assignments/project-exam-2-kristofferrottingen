@@ -4,6 +4,7 @@ import Navs from "./components/Navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./sites/Home";
+import ProductPage from "./sites/ProductPage"
 
 function App() {
   return (
@@ -18,8 +19,8 @@ function App() {
 					<Route path="/" exact>
             <Home />
           </Route>
-					<Route path="/contact" exact>
-           
+					<Route path="/produkter" exact>
+            <ProductPage />
           </Route>
           <Route path="/login" exact>
            

@@ -48,3 +48,9 @@
     border: none;
     border-color: none;
 }
+
+@media (max-width: 992px){
+    .web-nav{
+        display: none !important;
+    }
+}

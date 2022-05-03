@@ -35,6 +35,60 @@
   font-size: 20px;
 }
 
+.navbar {
+  background-color: #3b363c;
+}
+
+.offcanvas {
+  background-color: #3b363c !important;
+  color: #f5f7f2;
+}
+
+.offcanvas-body .navbar-nav a {
+  color: #f5f7f2;
+}
+
+.offcanvas-body .navbar-nav a::after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: #f5f7f2;
+  display: inline-block;
+}
+
+.navbar-dark .web-nav .nav-link:focus, .navbar-dark .web-nav .nav-link:hover {
+  color: #7f4f38 !important;
+}
+
+.web-nav a {
+  color: #f5f7f2 !important;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.web-nav a .icons {
+  font-size: 27px;
+}
+
+.web-nav a .fa-1 {
+  padding-left: 25px;
+}
+
+.offcanvas-header .btn-close {
+  background-color: #f5f7f2;
+}
+
+.navbar-light .navbar-toggler {
+  border: none;
+  border-color: none;
+}
+
+@media (max-width: 992px) {
+  .web-nav {
+    display: none !important;
+  }
+}
+
 * {
   font-family: "Montserrat", sans-serif;
 }
@@ -352,7 +406,11 @@
   padding-top: 50px;
 }
 
-.sos-section .sos-right .sos-right-socials i {
-  font-size: 30px;
+.sos-section .sos-right .sos-right-socials svg {
+  font-size: 50px;
+}
+
+.product-page {
+  max-width: 1500;
 }
 /*# sourceMappingURL=style.css.map */
