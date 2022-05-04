@@ -40,10 +40,8 @@ function Products() {
     }
   
     return (
-        <div className='home-products-section'>
-            <h2>Bestselgere</h2>
-            <div className='line-hvit'></div>
-            <div className='home-products'>
+        <div className='products-section'>
+            <div className='products-grid'>
                 {product.map( function (data){
                     const id = data.id;
                     const title = data.acf.navn;
