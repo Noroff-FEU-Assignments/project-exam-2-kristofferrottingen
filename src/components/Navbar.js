@@ -31,7 +31,7 @@ function Navs() {
                 <Nav className="me-auto justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href="/">Hjem</Nav.Link>
                   <Nav.Link href="/produkter">Produkter</Nav.Link>
-                  <Nav.Link href="#home">Kontakt oss</Nav.Link>
+                  <Nav.Link href="/kontakt">Kontakt oss</Nav.Link>
                   <Nav.Link href="/admin">
                     <FontAwesomeIcon className='icons' icon={faCircleUser}/>
                   </Nav.Link>
@@ -45,7 +45,7 @@ function Navs() {
             <Nav className="me-auto web-nav">
               <Nav.Link href="/">Hjem</Nav.Link>
               <Nav.Link href="/produkter">Produkter</Nav.Link>
-              <Nav.Link href="#home">Kontakt oss</Nav.Link>
+              <Nav.Link href="/kontakt">Kontakt oss</Nav.Link>
               <Form className="d-flex">
                 <FormControl
                   type="search"

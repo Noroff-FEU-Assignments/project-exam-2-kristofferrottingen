@@ -5,15 +5,14 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./sites/Home";
 import ProductPage from "./sites/ProductPage"
+import DetailsPage from "./sites/DetailsPage";
+import ContactPage from "./sites/ContactPage";
 
 function App() {
   return (
     <Router>
       <div>
         <Navs />
-
-
-
 
         <Switch>
 					<Route path="/" exact>
@@ -22,11 +21,11 @@ function App() {
 					<Route path="/produkter" exact>
             <ProductPage />
           </Route>
-          <Route path="/login" exact>
-           
-          </Route>
           <Route path="/detail/:id">
-          
+            <DetailsPage />
+          </Route>
+          <Route path="/kontakt">
+            <ContactPage />
           </Route>
 				</Switch>
       </div>

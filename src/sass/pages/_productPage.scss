@@ -1,9 +1,10 @@
 .product-page{
-    max-width: 1500px;  
+    max-width: 1350px;  
     padding: 40px; 
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 0 auto;
     
 
     .product-page-hero{
@@ -38,6 +39,8 @@
             max-width: 300px;
             width: 20%;
             padding-right: 30px;
+            display: flex;
+            flex-direction: column;
 
             h4{
                 margin: 10px 0px;
@@ -52,15 +55,24 @@
                 width: 100%;
             }
 
-            a{
+            button{
+                margin: 5px 0px;
+                background-color: white;
+                border: none;
                 text-decoration: none;
                 color: $primary-color;
                 transition: all 0.2s ease;
+                text-align: left;
 
                 &:hover{
                     transition: all 0.2s ease;
-                    color: $third-color;
-                    text-decoration: underline;
+                    background-color: $third-color;
+                    color: $secondary-color;
+                }
+
+                &.active{
+                    background-color: $third-color;
+                    color: $secondary-color;
                 }
             }
 
@@ -78,20 +90,41 @@
             .dropdown-menu{
                 padding: 10px;
 
+                &.show{
+                    display: flex;
+                    flex-direction: column;
+                }
+
                 h4{
+                    padding-bottom: 5px;
                     font-size: 14px;
                     font-weight: 800;
                 }
 
-                .dropdown-item{
 
-                    a{
-                        text-decoration: none;
-                        color: $primary-color;
-                        margin: 0;
-                        padding: 0;
+                button{
+                    background-color: white;
+                    border: none;
+                    text-decoration: none;
+                    color: $primary-color;
+                    margin: 0;
+                    padding: 0;
+                    transition: all 0.2s ease;
+                    text-align: left;
+                    padding: 7px 0px;
+
+                    &:hover{
+                        transition: all 0.2s ease;
+                        background-color: $third-color;
+                        color: $secondary-color;
+                    }
+
+                    &.active{
+                        background-color: $third-color;
+                        color: $secondary-color;
                     }
                 }
+                
             }
         }
 
