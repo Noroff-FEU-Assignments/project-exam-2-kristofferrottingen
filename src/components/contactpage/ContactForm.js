@@ -4,10 +4,9 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 const userSchema = yup.object().shape({
-    firstname: yup.string().required("Your firstname is missing").min(3, "Your firstname has to be at least 3 characters"),
-    lastname: yup.string().required("Your lastname is missing").min(4, "Your lastname has to be at least 4 characters"),
-    email: yup.string().required("Please insert your email").email("This is not a valid email. Try again!"),
-    message: yup.string().required("You have not entered any message").min(10, "The message has to be at least 10 characters"),
+    firstname: yup.string().required("Navnet ditt mangler").min(3, "Det må minst være 3 bokstaver"),
+    email: yup.string().required("Din e-post adresse mangler").email("Denne e-posten finnes ikke, eller er skrevet feil"),
+    message: yup.string().required("Vennligst skriv meldingen din her").min(10, "Meldingen må inneholde minimum ti bokstaver"),
 });
 
 
@@ -25,17 +24,14 @@ function ContactForm() {
 
     return (
         <form className='contact-form' onSubmit={handleSubmit(dataSubmit)}>
-            <label>Firstname*</label>
+            <label>Navn</label>
             <input {...register("firstname")} />
             {errors.firstname && <span>{errors.firstname.message}</span>}
-            <label>Lastname*</label>
-            <input {...register("lastname")} />
-            {errors.lastname && <span>{errors.lastname.message}</span>}
-            <label>Email*</label>
+            <label>E-post</label>
             <input {...register("email")} />
             {errors.email && <span>{errors.email.message}</span>}
-            <label>Message*</label>
-            <input className='contact-messsage' {...register("message")} />
+            <label>Melding</label>
+            <input type="text" className='contact-message' {...register("message")} />
             {errors.message && <span>{errors.message.message}</span>}
 
             <button>Send</button>

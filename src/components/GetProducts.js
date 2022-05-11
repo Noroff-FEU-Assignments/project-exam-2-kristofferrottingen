@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function GetProducts({ id, img, title, pris}) {
   return (
-    <Link to={`detail/${id}`} className='product-card'>
+    <Link to={`/detail/${id}`} className='product-card'>
       <img src={img} alt={title}></img>
       <h4>{title}</h4>
       <p>{pris}</p>

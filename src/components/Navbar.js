@@ -32,7 +32,7 @@ function Navs() {
                   <Nav.Link href="/">Hjem</Nav.Link>
                   <Nav.Link href="/produkter">Produkter</Nav.Link>
                   <Nav.Link href="/kontakt">Kontakt oss</Nav.Link>
-                  <Nav.Link href="/admin">
+                  <Nav.Link href="/login">
                     <FontAwesomeIcon className='icons' icon={faCircleUser}/>
                   </Nav.Link>
                   <Nav.Link href='/cart'>
@@ -55,7 +55,7 @@ function Navs() {
                 />
                 <Button variant="outline-success">Search</Button>
               </Form>
-              <Nav.Link href="/admin">
+              <Nav.Link href="/login">
                 <FontAwesomeIcon className='icons fa-1' icon={faCircleUser}/>
               </Nav.Link>
               <Nav.Link href='/cart'>
