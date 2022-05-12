@@ -11,6 +11,7 @@
 
         h1{
             font-weight: 800;
+            font-size: 35px;
         }
 
         .line-product-hero{
@@ -63,6 +64,7 @@
                 color: $primary-color;
                 transition: all 0.2s ease;
                 text-align: left;
+                padding: 3px;
 
                 &:hover{
                     transition: all 0.2s ease;

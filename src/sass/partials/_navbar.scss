@@ -1,5 +1,24 @@
 .navbar{
     background-color: $primary-color;
+    display: block !important;
+    padding-top: 0 !important;
+
+    @media (max-width: 991px) {
+        padding-top: 0.5rem !important;
+    }
+}
+
+.nav-logo{
+    padding-bottom: 10px;
+}
+
+.upper-nav{
+    background: $primary-color;
+    font-size: 13px;
+    padding: 0px 20px;
+    max-width: 1320px;
+    margin: 0 auto;
+
 }
 
 .offcanvas {
