@@ -9,7 +9,7 @@ import AdminMenu from './AdminMenu';
 
 function AdminProducts() {
 
-    const [productsData, setProductsdata] = useState([]);
+    const [productsData, setProductsData] = useState([]);
 
     useEffect(() => {
         fetchProduct();
@@ -19,7 +19,7 @@ function AdminProducts() {
         const resp = await fetch(url);
         const json = await resp.json();
         console.log(json);
-        setProductsdata(json);
+        setProductsData(json);
     }
 
 

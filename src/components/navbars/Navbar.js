@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
-import { Navbar, Nav, Container, Offcanvas, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav, Container, Offcanvas } from 'react-bootstrap';
 import EvonLogo from '../../images/logo-liggende.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import AuthCon from '../../context/Auth';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Search from './Search';
 
 function Navs() {
 
@@ -77,15 +78,7 @@ function Navs() {
           <Link className='nav-link' to="/">Hjem</Link>
           <Link className='nav-link' to="/produkter">Produkter</Link>
           <Link className='nav-link' to="/kontakt">Kontakt oss</Link>
-          <Form className="d-flex">
-            <FormControl
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+          <Search />
           <Link className='nav-link' to='/cart'>
             <FontAwesomeIcon className='icons' icon={faCartShopping}/>
           </Link>
