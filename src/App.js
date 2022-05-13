@@ -1,6 +1,5 @@
 import React from "react";
 import "./sass/style.scss";
-import Navs from "./components/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./sites/Home";
@@ -9,21 +8,23 @@ import DetailsPage from "./sites/DetailsPage";
 import ContactPage from "./sites/ContactPage";
 import LoginForm from "./sites/Login";
 import { AuthProv } from "./context/Auth";
+import AdminPage from "./sites/AdminPage";
+import AdminProducts from "./components/adminpage/AdminProducts";
 
 function App() {
   return (
     <AuthProv>
       <Router>
         <div>
-          <Navs />
-
-        <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/produkter" element={<ProductPage />} />
-          <Route path="/detail/:id" element={<DetailsPage />} />
-          <Route path="/kontakt" element={<ContactPage />} />
-          <Route path="/login" element={<LoginForm />} />
-        </Routes>
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+            <Route path="/produkter" exact element={<ProductPage />} />
+            <Route path="/detail/:id" element={<DetailsPage />} />
+            <Route path="/kontakt" exact element={<ContactPage />} />
+            <Route path="/login" exact element={<LoginForm />} />
+            <Route path="/admin" element={<AdminPage />} />
+            <Route path="/admin/produkter" element={<AdminProducts />} />
+          </Routes>
         </div>
       </Router>
     </AuthProv>

@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { url } from '../api/Api';
+import Navs from '../components/navbars/Navbar';
 
 function DetailsPage() {
     const [info, setInfo] = useState(null);
@@ -51,26 +52,29 @@ function DetailsPage() {
 
 
   return (
-    <div className='details-page-section'>
-        <div className='details-page-left'>
-            <img src={info.acf.img1} alt={info.acf.navn}/>
-            <div className='details-line'></div>
-            <h4>Produkter du og vil like</h4>
-        </div>
-        <div className='details-page-right'>
-            <h1>{info.acf.navn}</h1>
-            <p>{info.acf.pb}</p>
-            <div className='details-price-sku'>
-                <div className='details-price'>
-                    <p>kr <span>{info.acf.pris}</span></p>
+    <>
+        <Navs />
+        <div className='details-page-section'>
+            <div className='details-page-left'>
+                <img src={info.acf.img1} alt={info.acf.navn}/>
+                <div className='details-line'></div>
+                <h4>Produkter du og vil like</h4>
+            </div>
+            <div className='details-page-right'>
+                <h1>{info.acf.navn}</h1>
+                <p>{info.acf.pb}</p>
+                <div className='details-price-sku'>
+                    <div className='details-price'>
+                        <p>kr <span>{info.acf.pris}</span></p>
+                    </div>
+                    <div className='details-sku'>
+                        <span>PÅ LAGER</span>
+                        <p>SKU#: {info.acf.sku}</p>
+                    </div>  
                 </div>
-                <div className='details-sku'>
-                    <span>PÅ LAGER</span>
-                    <p>SKU#: {info.acf.sku}</p>
-                </div>  
             </div>
         </div>
-    </div>
+    </>
   )
 }
 

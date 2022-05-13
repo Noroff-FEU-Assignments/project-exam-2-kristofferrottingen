@@ -3,14 +3,16 @@ import Hero from '../components/home/Hero';
 import HomeProducts from '../components/home/HomeProducts';
 import About from '../components/home/About';
 import ShareOnSocials from '../components/home/Sos';
+import Navs from '../components/navbars/Navbar';
 
 function Home() {
   return (
     <>
-        <Hero />
-        <HomeProducts />
-        <About />
-        <ShareOnSocials />
+      <Navs />
+      <Hero />
+      <HomeProducts />
+      <About />
+      <ShareOnSocials />
     </>
   )
 }
