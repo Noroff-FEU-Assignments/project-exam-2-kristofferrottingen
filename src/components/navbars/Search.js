@@ -12,7 +12,7 @@ function Search() {
         fetchProduct();
     }, []); 
 
-    const fetchProduct = async (data) => {
+    const fetchProduct = async () => {
         const resp = await fetch(url);
         const json = await resp.json();
 
@@ -37,7 +37,7 @@ function Search() {
             }}
         />
         <div className='search-results'>
-            {searchData.filter((value) => {
+            {/* {searchData.filter.map((value) => {
                 if (searchVal === "") {
                     return searchResult.style.display = "none";
                 } else if (value.acf.navn.toLowerCase().includes(searchVal.toLowerCase())) {
@@ -45,7 +45,7 @@ function Search() {
                         <Link to={`/detail/${value.id}`}>{value.acf.navn}</Link>
                     )
                 }
-            })}
+            })} */}
         </div>
     </Form>
   )

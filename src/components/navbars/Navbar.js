@@ -24,7 +24,7 @@ function Navs() {
       <Navbar.Collapse className="upper-nav justify-content-end">
         {authState ? (
           <Navbar.Text>
-            Heisann: {authState} | <Link to="/admin">Admin</Link> | <a onClick={LogOut}>Logg ut</a> 
+            Heisann: Admin | <Link to="/admin">Admin</Link> | <a onClick={LogOut}>Logg ut</a> 
           </Navbar.Text>) : 
           (
             <Navbar.Text>
@@ -62,7 +62,7 @@ function Navs() {
               </Link>
               {authState ? (
                 <Navbar.Text>
-                  Heisann: {authState} | <Link to="/admin">Admin</Link> <a onClick={LogOut}>Logg ut</a> 
+                  Heisann: Admin | <Link to="/admin">Admin</Link> <a onClick={LogOut}>Logg ut</a> 
                 </Navbar.Text>) : 
                 (
                   <Navbar.Text>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { url } from '../../api/Api';
+import { productsUrl } from '../../api/Api';
 import AdminNavbar from '../navbars/AdminNavbar';
 import Header from '../text/Heading';
 import AdminMenu from './AdminMenu';
@@ -16,7 +16,7 @@ function AdminProducts() {
     }, []); 
 
     const fetchProduct = async () => {
-        const resp = await fetch(url);
+        const resp = await fetch(productsUrl);
         const json = await resp.json();
         console.log(json);
         setProductsData(json);
@@ -31,7 +31,7 @@ function AdminProducts() {
             <AdminMenu />
             <div className='admin-product-page'>
                 <Header title='Produkter' />
-                <button><Link to="/admin/legg-til-produkter"> Legg til product </Link></button>
+                <button><Link to="/admin/legg-til-produkt">Legg til product</Link></button>
                 <Table striped bordered hover>
                     <thead>
                         <tr>
@@ -51,14 +51,14 @@ function AdminProducts() {
                         const str = data.acf.str
 
                         return (
-                            <tbody>
+                            <tbody key={id}>
                                 <tr>
                                     <td>{id}</td>
-                                    <td><img src={image} alt={title} /></td>
+                                    <td><img src={image} alt={title}/></td>
                                     <td>{title}</td>
                                     <td>{str}</td>
                                     <td>{pris}</td>
-                                    <td><Link to={`edit/${id}`}>Edit</Link></td>
+                                    <td><Link key={id} to={`edit/${id}`}>Edit</Link></td>
                                 </tr>
                             </tbody>
                         )

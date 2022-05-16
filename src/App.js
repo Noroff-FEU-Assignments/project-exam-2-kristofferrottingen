@@ -10,6 +10,7 @@ import LoginForm from "./sites/Login";
 import { AuthProv } from "./context/Auth";
 import AdminPage from "./sites/AdminPage";
 import AdminProducts from "./components/adminpage/AdminProducts";
+import AdminAddProduct from "./components/adminpage/AdminAddProduct"
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/login" exact element={<LoginForm />} />
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/admin/produkter" element={<AdminProducts />} />
+            <Route path="/admin/legg-til-produkt" element={<AdminAddProduct />} />
           </Routes>
         </div>
       </Router>

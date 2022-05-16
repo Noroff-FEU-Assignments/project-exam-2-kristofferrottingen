@@ -31,7 +31,7 @@ export default function LoginForm() {
 		try {
 			const resp = await axios.post(urlJWT, data);
 			console.log(resp.data);
-            setAuthState(resp.data.user_display_name);
+            setAuthState(resp.data);
             navigate("/admin");
 		} catch (error) {
 			console.log(error);	
@@ -53,7 +53,7 @@ export default function LoginForm() {
 
                         <div className="login-section">
                             <label>Passord</label>
-                            <input{...register("password")} type="password" />
+                            <input {...register("password")} type="password" />
                             {errors.password && <span>{errors.password.message}</span>}
                         </div>
                         <button>Logg inn</button>

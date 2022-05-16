@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from "react";
-import { url } from '../../api/Api';
+import { productsUrl } from '../../api/Api';
 import GetProducts from '../GetProducts';
 import ProductFilter from './ProductFilter';
 
@@ -17,7 +17,7 @@ function ProductMain() {
 
 
     const fetchProduct = async () => {
-        const resp = await fetch(url);
+        const resp = await fetch(productsUrl);
         const json = await resp.json();
         setProduct(json);
         setCatFiltered(json);

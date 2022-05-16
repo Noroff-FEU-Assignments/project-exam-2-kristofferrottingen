@@ -12,7 +12,7 @@ export default function HookAxios() {
         const token = authState.token;
         configure.headers.Authorization = token ? `Bearer ${token}`: "";
         return configure;
-    })
+    });
 
     return apiUser;
 }
