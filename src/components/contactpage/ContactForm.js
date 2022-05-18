@@ -56,7 +56,7 @@ function ContactForm() {
             <input {...register("slug")} />
             {errors.slug && <span>{errors.slug.message}</span>}
             <label>Melding</label>
-            <input type="text" className='contact-message' {...register("content")} />
+            <textarea type="text" className='contact-message' {...register("content")} />
             {errors.content && <span>{errors.content.message}</span>}
 
             <button>Send</button>

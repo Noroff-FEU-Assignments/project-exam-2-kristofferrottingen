@@ -11,6 +11,7 @@ import { AuthProv } from "./context/Auth";
 import AdminPage from "./sites/AdminPage";
 import AdminProducts from "./components/adminpage/AdminProducts";
 import AdminAddProduct from "./components/adminpage/AdminAddProduct"
+import AdminMessages from "./components/adminpage/AdminMessages";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/admin/produkter" element={<AdminProducts />} />
             <Route path="/admin/legg-til-produkt" element={<AdminAddProduct />} />
+            <Route path="/admin/henvendelser" element={<AdminMessages />} />
           </Routes>
         </div>
       </Router>

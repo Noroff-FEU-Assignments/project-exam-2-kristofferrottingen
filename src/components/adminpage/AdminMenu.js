@@ -12,7 +12,7 @@ function AdminMenu() {
                 <Link className='nav-link' to="/admin/ordre">Ordre</Link>
                 <Link className='nav-link' to="/admin/produkter">Produkter</Link>
                 <Link className='nav-link' to="/admin/legg-til-produkt">Legg til produkt</Link>
-                <Link className='nav-link' to="/admin/meldinger">Meldinger</Link>
+                <Link className='nav-link' to="/admin/henvendelser">Meldinger</Link>
             </Nav>  
         </Navbar>
     </div>

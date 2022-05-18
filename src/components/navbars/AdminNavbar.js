@@ -49,7 +49,7 @@ function AdminNavbar() {
                 <Navbar.Collapse className="justify-content-end">
                     {authState ? (
                             <Navbar.Text>
-                                Heisann: Admin | <a onClick={LogOut}>Logg ut</a>
+                                Heisann: {authState.user_nicename} | <a onClick={LogOut}>Logg ut</a>
                             </Navbar.Text>
                         ) : (
                             navigate("/")
