@@ -7,8 +7,8 @@ import { url } from '../../api/Api';
 
 const userSchema = yup.object().shape({
     title: yup.string().required("Navnet ditt mangler").min(3, "Det må minst være 3 bokstaver"),
-    slug: yup.string().required("Din e-post adresse mangler").email("Denne e-posten finnes ikke, eller er skrevet feil"),
-    content: yup.string().required("Vennligst skriv meldingen din her").min(10, "Meldingen må inneholde minimum ti bokstaver"),
+    email: yup.string().required("Din e-post adresse mangler").email("Denne e-posten finnes ikke, eller er skrevet feil"),
+    melding: yup.string().required("Vennligst skriv meldingen din her").min(10, "Meldingen må inneholde minimum ti bokstaver"),
 });
 
 
@@ -26,9 +26,18 @@ function ContactForm() {
 
     async function dataSubmit(data) {
 
-        data.status = "publish";
+        data = {
+            status: "publish",
+            categories: "11",
+            title: data.title,
+            fields: {
+                navn: data.title,
+                pb: data.melding,
+                tb: data.email,
+            },
+        };
 
-        data.categories = "11";
+        console.log(data);
 
         const form = document.querySelector(".contact-form");
 
@@ -53,11 +62,11 @@ function ContactForm() {
             <input {...register("title")} />
             {errors.title && <span>{errors.title.message}</span>}
             <label>E-post</label>
-            <input {...register("slug")} />
-            {errors.slug && <span>{errors.slug.message}</span>}
+            <input {...register("email")} />
+            {errors.email && <span>{errors.email.message}</span>}
             <label>Melding</label>
-            <textarea type="text" className='contact-message' {...register("content")} />
-            {errors.content && <span>{errors.content.message}</span>}
+            <textarea type="text" className='contact-message' {...register("melding")} />
+            {errors.melding && <span>{errors.melding.message}</span>}
 
             <button>Send</button>
         </form>

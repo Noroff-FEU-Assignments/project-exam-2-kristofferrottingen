@@ -103,9 +103,9 @@ function AdminMessages() {
                         ) : (
                             messageInfo.map((data) => {
                                 const id = data.id;
-                                const navn = data.title.rendered;
-                                const melding = data.content.rendered;
-                                const epost = data.slug;
+                                const navn = data.acf.navn;
+                                const melding = data.acf.pb;
+                                const epost = data.acf.tb;
 
 
                                 return (
