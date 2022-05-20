@@ -125,7 +125,20 @@
         }
 
         tbody {
-            vertical-align: baseline;
+            vertical-align: none;
+
+            button{
+                border: none;
+                background-color: transparent;
+                text-decoration: underline;
+                color: blue;
+            }
+
+            .no-message {
+                text-align: center;
+                font-size: 22px;
+                padding: 20px;
+            }
 
 
             .admin-modal-overlay{
@@ -153,6 +166,7 @@
 
                 button{
                     justify-content: end;
+                    text-decoration: none;
                     display: flex;
                     border: none;
                     background: transparent;

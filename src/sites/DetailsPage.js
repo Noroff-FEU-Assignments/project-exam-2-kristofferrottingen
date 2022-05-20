@@ -1,11 +1,16 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { url } from '../api/Api';
+import { url, pdvlProducts } from '../api/Api';
+import Loader from '../components/Loader';
 import Navs from '../components/navbars/Navbar';
+import GetProducts from '../components/GetProducts';
+import { Tabs, Tab } from 'react-bootstrap';
+ 
 
 function DetailsPage() {
-    const [info, setInfo] = useState(null);
+    const [info, setInfo] = useState([]);
+    const [conProd, setConProd] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -24,11 +29,13 @@ function DetailsPage() {
         async function fetchInfo() {
             try{
                 const resp = await fetch(detailUrl);
+                const response = await fetch(pdvlProducts);
 
-                if (resp.ok) {
+                if (resp.ok && response.ok) {
                     const data = await resp.json();
-                    console.log(data);
                     setInfo(data);
+                    const products = await response.json();
+                    setConProd(products);
                 } else {
                     setError("Some issue has been detected");
                 }
@@ -40,10 +47,16 @@ function DetailsPage() {
             }
         }fetchInfo();
 
-    }, [detailUrl]);
+    }, [detailUrl, pdvlProducts]);
 
     if (loading) {
-        return <div className="loader"></div>
+        return (
+            <>
+                <Navs />
+                <Loader />
+            </>
+            
+        )
     }
 
     if (error) {
@@ -59,18 +72,46 @@ function DetailsPage() {
                 <img src={info.acf.img1} alt={info.acf.navn}/>
                 <div className='details-line'></div>
                 <h4>Produkter du og vil like</h4>
+                <div className='pdvl-section'>
+                    {conProd.map((prod) => {
+                        const id = prod.id;
+                        const title = prod.acf.navn;
+                        const pris = prod.acf.pris;
+                        const image = prod.acf.img1;
+
+                        return <GetProducts key={id} id={id} img={image} title={title} pris={pris} />
+                    })}
+                </div>
             </div>
-            <div className='details-page-right'>
-                <h1>{info.acf.navn}</h1>
-                <p>{info.acf.pb}</p>
-                <div className='details-price-sku'>
-                    <div className='details-price'>
-                        <p>kr <span>{info.acf.pris}</span></p>
+            <div className='details-right'>
+                <div className='details-right-content'>
+                    <h1>{info.acf.navn}</h1>
+                    <p>{info.acf.pb}</p>
+                    <div className='details-price-sku'>
+                        <div className='details-price'>
+                            <p>kr <span>{info.acf.pris}</span></p>
+                        </div>
+                        <div className='details-sku'>
+                            <span>PÅ LAGER</span>
+                            <p>SKU#: {info.acf.sku}</p>
+                        </div>  
                     </div>
-                    <div className='details-sku'>
-                        <span>PÅ LAGER</span>
-                        <p>SKU#: {info.acf.sku}</p>
-                    </div>  
+                    <div className='details-price-line'></div>
+                    <div className='products-size'>
+                        <p>Størrelse</p>
+                        <button>{info.acf.str}</button>
+                    </div>
+                    <button className="details-button">Legg i handlekurv</button>
+                    <div className='product-spec'>
+                        <Tabs defaultActiveKey="va" id="uncontrolled-tab-example" className="mb-3">
+                            <Tab eventKey="va" title="Vaskeanvisning">
+                                <p>{info.acf.va}</p>
+                            </Tab>
+                            <Tab eventKey="tb" title="Teknisk Beskrivelse">
+                                <p>{info.acf.tb}</p>
+                            </Tab>
+                        </Tabs>
+                    </div>
                 </div>
             </div>
         </div>

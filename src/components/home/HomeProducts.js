@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from "react";
 import { homeProducts } from '../../api/Api';
 import GetProducts from '../GetProducts';
+import Loader from '../Loader';
 
 function HomeProducts() { 
   
@@ -32,7 +33,7 @@ function HomeProducts() {
     }, []);
 
     if (loading) {
-        return <div className="loader"></div>
+        return <Loader />
     }
 
     if (error) {

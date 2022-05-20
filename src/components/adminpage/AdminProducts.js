@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { productsUrl } from '../../api/Api';
+import Loader from '../Loader';
 import AdminNavbar from '../navbars/AdminNavbar';
 import Header from '../text/Heading';
 import AdminMenu from './AdminMenu';
@@ -10,16 +11,50 @@ import AdminMenu from './AdminMenu';
 function AdminProducts() {
 
     const [productsData, setProductsData] = useState([]);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
+    
 
     useEffect(() => {
         fetchProduct();
     }, []); 
 
     const fetchProduct = async () => {
-        const resp = await fetch(productsUrl);
-        const json = await resp.json();
-        console.log(json);
-        setProductsData(json);
+        try {
+            const resp = await fetch(productsUrl);
+
+            if (resp.ok) {
+                const json = await resp.json();
+                setProductsData(json);
+            } else {
+                setError("Something in the API might be wrong!");
+            }
+
+        } catch (error) {
+            setError(error.toString());
+        } finally {
+            setLoading(false);
+        }
+    }
+
+    if (loading) {
+        return (
+            <>
+                <AdminNavbar />
+                <div className='admin-page'>
+                    <AdminMenu />
+                    <div className='admin-product-page'>
+                        <Header title='Produkter' />
+                        <button><Link to="/admin/legg-til-produkt">Legg til product</Link></button>
+                        <Loader />
+                    </div>
+                </div>
+            </>
+        )
+    }
+
+    if (error) {
+        return <div>ERROR: {error}</div>
     }
 
 
