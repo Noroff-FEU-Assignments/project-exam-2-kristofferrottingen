@@ -1,12 +1,13 @@
 .contact-page{
     display: flex;
     flex-direction: row-reverse;
-    height: 90vh;
+    min-height: 90vh;
     background-image: url(../../images/kontakt-img.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 20% 0;
     color: $secondary-color;
+    padding-bottom: 30px;
 
 
     .contact-page-form{

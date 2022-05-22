@@ -27,7 +27,7 @@
         display: flex;
         flex-direction: column;
         width: 250px;
-        height: 80vh;
+        min-height: 90vh;
 
         .admin-menu-nav{
             display: flex;
@@ -79,7 +79,7 @@
     // Products admin page
 
     .admin-product-page{
-        padding: 60px;
+        padding: 60px 60px 100px 60px;
         width: 100%;
 
         button {
@@ -117,7 +117,7 @@
     // Message admin page
 
     .admin-message-page{
-        padding: 60px;
+        padding: 60px 60px 100px 60px;
         width: 100%;
 
         h1{
@@ -220,7 +220,7 @@
     // Admin add products
 
     .admin-add-products{
-        padding: 60px;
+        padding: 60px 60px 100px 60px;
         width: 100%;
 
         .add-products-content{

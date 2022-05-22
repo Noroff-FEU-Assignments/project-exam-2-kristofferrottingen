@@ -18,6 +18,7 @@ function App() {
     <AuthProv>
       <Router>
         <div>
+          
           <Routes>
             <Route path="/" exact element={<Home />} />
             <Route path="/produkter" exact element={<ProductPage />} />
@@ -29,6 +30,10 @@ function App() {
             <Route path="/admin/legg-til-produkt" element={<AdminAddProduct />} />
             <Route path="/admin/henvendelser" element={<AdminMessages />} />
           </Routes>
+          <footer>
+            <div>All rights served Evon © 2022</div>
+            <div>post@elements.as</div>
+          </footer>
         </div>
       </Router>
     </AuthProv>
