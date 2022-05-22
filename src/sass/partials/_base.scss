@@ -40,4 +40,8 @@ footer {
     padding: 0px 30px;
     align-items: center;
     color: $secondary-color;
+
+    @media (max-width: 550px) {
+        font-size: 11px;
+    }
 }
