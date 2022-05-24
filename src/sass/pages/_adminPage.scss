@@ -2,6 +2,8 @@
     .container {
         padding-top: 15px;
 
+        
+
         span{
             color: $secondary-color;
 
@@ -14,6 +16,25 @@
             }
 
         }
+
+        #basic-navbar-nav {
+            display: none !important;
+        }
+
+        .navbar-toggler {
+            .navbar-toggler-icon {
+                color: $secondary-color !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .navbar-toggler{
+                display: block;
+                margin-right: 30px;
+            }
+        }
+        
+        
     }
 }
 

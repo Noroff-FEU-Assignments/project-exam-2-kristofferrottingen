@@ -9,10 +9,12 @@ function Home() {
   return (
     <>
       <Navs />
-      <Hero />
-      <HomeProducts />
-      <About />
-      <ShareOnSocials />
+      <div className='home-page'>
+        <Hero />
+        <HomeProducts />
+        <About />
+        <ShareOnSocials />
+      </div>
     </>
   )
 }
