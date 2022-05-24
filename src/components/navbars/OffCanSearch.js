@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { productsUrl } from '../../api/Api';
 
-function Search() {
-    const searchResult = document.querySelector(".search-results");
+function OffCanSearch() {
+    const searchResult = document.querySelector(".off-can-search-results");
     const [searchVal, setSearchVal] = useState("");
     const [searchData, setSearchData] = useState([]);
 
@@ -29,7 +29,7 @@ function Search() {
   return (
     <div className='searchbar'>
         <input type="text" placeholder='Søk...' onChange={event => {setSearchVal(event.target.value)}}></input>
-        <div className='search-results'>
+        <div className='off-can-search-results'>
            {searchData.filter((value) => {
                     searchResult.style.display = "flex";
 
@@ -48,4 +48,4 @@ function Search() {
   )
 }
 
-export default Search;
+export default OffCanSearch;

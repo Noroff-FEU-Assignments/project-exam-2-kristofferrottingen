@@ -7,6 +7,7 @@ import AuthCon from '../../context/Auth';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Search from './Search';
+import OffCanSearch from './OffCanSearch';
 
 function Navs() {
 
@@ -54,6 +55,7 @@ function Navs() {
             </Offcanvas.Header>
             <Offcanvas.Body>
             <Nav className="me-auto justify-content-end flex-grow-1 pe-3">
+              <OffCanSearch />
               <Link className='nav-link' to="/">Hjem</Link>
               <Link className='nav-link' to="/produkter">Produkter</Link>
               <Link className='nav-link' to="/kontakt">Kontakt oss</Link>

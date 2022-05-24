@@ -11,6 +11,10 @@
         align-items: center;
         width: 100%;
 
+        .details-page-main-img {
+            padding-top: 30px;
+        }
+
         .details-line{
             content: "";
             width: 100%;
@@ -30,6 +34,7 @@
 
             .product-card{
                 margin: 0px 25px;
+                height: 325px;
 
             }
         }
@@ -42,6 +47,7 @@
 
                 .product-card {
                     width: 210px;
+                    height: 270px;
 
                     img{
                         width: 150px;
@@ -184,6 +190,10 @@
         .details-page-left {
             width: 100%;
 
+            .details-page-main-img {
+                padding-bottom: 30px;
+            }
+
             .details-line{
                 display: none;
             }
@@ -213,7 +223,7 @@
 
         .details-page-left {
             
-            img {
+            .details-page-main-img {
                 max-width: 300px;
             }
         }

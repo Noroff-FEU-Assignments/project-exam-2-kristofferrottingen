@@ -17,7 +17,6 @@ function HomeProducts() {
 
                 if(resp.ok) {
                     const json = await resp.json();
-                    console.log(json);
                     setProduct(json);
                 } else {
                     setError("Something in the API might be wrong!");

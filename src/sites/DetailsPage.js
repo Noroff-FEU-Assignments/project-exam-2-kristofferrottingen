@@ -105,7 +105,7 @@ function DetailsPage() {
         <Navs />
         <div className='details-page-section'>
             <div className='details-page-left'>
-                <img src={info.acf.img1} alt={info.acf.navn}/>
+                <img className='details-page-main-img' src={info.acf.img1} alt={info.acf.navn}/>
                 <div className='details-line'></div>
                 <h4>Produkter du og vil like</h4>
                 <div className='pdvl-section'>

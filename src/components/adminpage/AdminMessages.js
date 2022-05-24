@@ -50,7 +50,7 @@ function AdminMessages() {
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Navn</th>
+                                    <th className='name-col'>Navn</th>
                                     <th>E-post</th>
                                     <th>Melding</th>
                                     <th>Se mer</th>
@@ -86,7 +86,7 @@ function AdminMessages() {
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Navn</th>
+                            <th className='name-col'>Navn</th>
                             <th>E-post</th>
                             <th>Melding</th>
                             <th>Se mer</th>
@@ -112,7 +112,7 @@ function AdminMessages() {
                                     <tbody key={id}>
                                         <tr>
                                             <td>{id}</td>
-                                            <td>{navn}</td>
+                                            <td className='name-col'>{navn}</td>
                                             <td>{epost}</td>
                                             <td><p>{melding}</p></td>
                                             <td> 
@@ -121,7 +121,7 @@ function AdminMessages() {
                                                 <AdminModal open={show} onClose={() => setShow(false)}>
                                                     <h3>Melding: {id}</h3>
                                                     <div className='modal-info'>
-                                                        <p>Navn: <span>{navn}</span></p>
+                                                        <p className='name-col'>Navn: <span>{navn}</span></p>
                                                         <p>E-post: <span>{epost}</span></p>
                                                     </div>
                                                     <div className='modal-message'>

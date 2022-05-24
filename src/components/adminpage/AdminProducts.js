@@ -73,7 +73,7 @@ function AdminProducts() {
                             <th>#</th>
                             <th>Bilde</th>
                             <th>Navn</th>
-                            <th>Str</th>
+                            <th className='str-col'>Str</th>
                             <th>Pris</th>
                             <th>Edit</th>
                         </tr>
@@ -91,7 +91,7 @@ function AdminProducts() {
                                     <td>{id}</td>
                                     <td><img src={image} alt={title}/></td>
                                     <td>{title}</td>
-                                    <td>{str}</td>
+                                    <td className='str-col'>{str}</td>
                                     <td>{pris}</td>
                                     <td><Link key={id} to={`edit/${id}`}>Edit</Link></td>
                                 </tr>

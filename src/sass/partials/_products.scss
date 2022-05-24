@@ -6,12 +6,21 @@
     align-items: center;
     justify-content: center;
     font-family: $primary-font;
-    background-color: $card-bg;
+    background-color: transparent;
     width: 270px;
     height: 300px;
     text-align: center;
     text-decoration: none;
     color: $secondary-color;
+    background-color: $primary-color;
+    transition: all 0.2s ease;
+
+
+    &:hover {
+        background-color: $card-bg;
+        transition: all 0.2s ease;
+        color: $secondary-color;
+    }
 
     img{
         width: 200px;
