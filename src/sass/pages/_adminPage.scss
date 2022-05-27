@@ -213,7 +213,7 @@
                 max-width: 500px;
 
                 button{
-                    justify-content: end;
+                    justify-content: flex-end;
                     text-decoration: none;
                     display: flex;
                     border: none;
@@ -302,7 +302,7 @@
 
     }
 
-    // Admin add products
+    // Admin/Edit add products
 
     .admin-add-products{
         padding: 60px 60px 100px 60px;
@@ -326,7 +326,7 @@
                     .rows {
                         display: flex;
                         flex-direction: row;
-                        justify-content: start;
+                        justify-content: flex-start;
                         padding: 20px 0px;
                 
                     }
@@ -353,8 +353,8 @@
                     }
 
                     button {
-                        background-color: #7f4f38;
-                        color: #f5f7f2;
+                        background-color: $third-color;
+                        color: $secondary-color;
                         padding: 10px;
                         margin-bottom: 40px;
                         border: none;
@@ -367,6 +367,23 @@
                             background-color: $secondary-color;
                             color: $third-color;
                         }
+                    }
+                }
+
+                .delete-btn {
+                    background-color: $secondary-color;
+                    color: $third-color;
+                    padding: 10px;
+                    margin-bottom: 40px;
+                    border: none;
+                    border-radius: 6px;
+                    transition: all 0.2s ease;
+                    width: 150px;
+            
+                    &:hover {
+                        transition: all 0.2s ease;
+                        background-color: $third-color;
+                        color: $secondary-color;
                     }
                 }
             }

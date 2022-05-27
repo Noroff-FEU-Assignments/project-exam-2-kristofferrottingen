@@ -6,6 +6,8 @@ import { url } from "../../api/Api";
 import AdminNavbar from "../navbars/AdminNavbar";
 import AdminMenu from "./AdminMenu";
 import Header from "../text/Heading";
+import { useNavigate } from "react-router-dom";
+import AdminMediaDD from "./AdminMediaDD";
 
 const schema = yup.object().shape({
 	navn: yup.string().required("Produktet må ha et navn"),
@@ -20,6 +22,7 @@ const schema = yup.object().shape({
 
 export default function AdminAddProduct () {
 
+    const navigate = useNavigate();
 
 	const useAxios = HookAxios();
 
@@ -52,6 +55,7 @@ export default function AdminAddProduct () {
 		try {
 			const resp = await useAxios.post(url, data);
 			console.log(resp.data);
+            navigate("/admin/produkter");
 		} catch (error) {
 			console.log(error);
 		}
@@ -103,6 +107,11 @@ export default function AdminAddProduct () {
                                         <label>PRODUKT BESKRIVELSE</label>
                                         <textarea {...register("pb")} />
                                         {errors.pb && <span>{errors.pb.message}</span>}
+                                    </div>
+
+                                    <div className="field">
+                                        <label>Bilde</label>
+                                        <AdminMediaDD />
                                     </div>
                                 </div>
 

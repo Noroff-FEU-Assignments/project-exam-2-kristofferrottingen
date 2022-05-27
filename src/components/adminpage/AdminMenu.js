@@ -14,7 +14,6 @@ function AdminMenu() {
                 <Link className='nav-link' to="/admin/legg-til-produkt">Legg til produkt</Link>
                 <Link className='nav-link' to="/admin/henvendelser">Meldinger</Link>
                 <Link className='nav-link' to="/admin/feedback">Feedback</Link>
-                <Link className='nav-link' to="/admin/last-opp-bilde">Last opp bilde</Link>
             </Nav>  
         </Navbar>
     </div>
