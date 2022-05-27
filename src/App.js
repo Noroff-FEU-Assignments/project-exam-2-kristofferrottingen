@@ -12,6 +12,9 @@ import AdminPage from "./sites/AdminPage";
 import AdminProducts from "./components/adminpage/AdminProducts";
 import AdminAddProduct from "./components/adminpage/AdminAddProduct"
 import AdminMessages from "./components/adminpage/AdminMessages";
+import AdminFeedback from "./components/adminpage/AdminFeedback";
+import AdminEdit from "./components/adminpage/AdminEdit";
+import AdminImageUpload from "./components/adminpage/AdminImageUpload";
 
 function App() {
   return (
@@ -29,6 +32,9 @@ function App() {
             <Route path="/admin/produkter" element={<AdminProducts />} />
             <Route path="/admin/legg-til-produkt" element={<AdminAddProduct />} />
             <Route path="/admin/henvendelser" element={<AdminMessages />} />
+            <Route path="/admin/feedback" element={<AdminFeedback />} />
+            <Route path="/admin/produkter/edit/:id" element={<AdminEdit />} />
+            <Route path="/admin/last-opp-bilde" element={<AdminImageUpload />} />
           </Routes>
           <footer>
             <div>All rights served Evon © 2022</div>

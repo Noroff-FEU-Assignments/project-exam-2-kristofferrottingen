@@ -13,10 +13,10 @@ function GetProducts({ id, img, title, pris}) {
 }
 
 GetProducts.propTypes = {
-    id: PropTypes.number.isRequired,
-    img: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    pris: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  img: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  pris: PropTypes.string.isRequired,
 }
 
 export default GetProducts;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
-import { messageUrl } from '../../api/Api';
+import { enquirFeedback } from '../../api/Api';
 import Loader from '../Loader';
 import AdminNavbar from '../navbars/AdminNavbar';
 import Header from '../text/Heading';
@@ -9,12 +9,12 @@ import AdminModal from './AdminModal';
 
 function AdminMessages() {
 
-    const [messageInfo, setMessageInfo] = useState([]);
+    const [feedback, setFeedback] = useState([]);
     const [show, setShow] = useState(false);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const noMessage = messageInfo.length === 0;
+    const noFeedback = feedback.length === 0;
 
     useEffect(() => {
         fetchMessage();
@@ -22,11 +22,11 @@ function AdminMessages() {
 
     const fetchMessage = async () => {
         try {
-            const resp = await fetch(messageUrl);
+            const resp = await fetch(enquirFeedback);
 
             if (resp.ok) {
                 const json = await resp.json();
-                setMessageInfo(json);
+                setFeedback(json);
             } else {
                 setError('There seems to be an errror with the fecth call');
             }
@@ -45,7 +45,7 @@ function AdminMessages() {
                 <div className="admin-page">
                     <AdminMenu />
                     <div className='admin-message-page'>
-                        <Header title='Henvendelser' />
+                        <Header title='Feedback' />
                         <Table striped bordered hover>
                             <thead>
                                 <tr>
@@ -81,29 +81,29 @@ function AdminMessages() {
         <div className="admin-page">
             <AdminMenu />
             <div className='admin-message-page'>
-                <Header title='Henvendelser' />
+                <Header title='Feedback' />
                 <Table striped bordered hover>
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th className='name-col'>Navn</th>
+                            <th>Produkt</th>
                             <th>E-post</th>
                             <th>Melding</th>
                             <th>Se mer</th>
                         </tr>
                     </thead>
-                    {noMessage ? (
+                    {noFeedback ? (
                             <tbody>
                                 <tr>
                                     <th className='no-message'>
-                                        Ingen meldinger er sent
+                                        Ingen feedback er sent
                                     </th>
                                 </tr>
                             </tbody>
                         ) : (
-                            messageInfo.map((data) => {
+                            feedback.map((data) => {
                                 const id = data.id;
-                                const navn = data.acf.navn;
+                                const productImg = data.acf.sku;
+                                const productName = data.acf.navn;
                                 const melding = data.acf.pb;
                                 const epost = data.acf.tb;
 
@@ -111,17 +111,16 @@ function AdminMessages() {
                                 return (
                                     <tbody key={id}>
                                         <tr>
-                                            <td>{id}</td>
-                                            <td className='name-col'>{navn}</td>
+                                            <td><img src={productImg} alt={productName} /></td>
                                             <td>{epost}</td>
                                             <td>{melding}</td>
                                             <td> 
                                                 <button onClick={() => setShow(true)}>Se mer</button>
 
                                                 <AdminModal open={show} onClose={() => setShow(false)}>
-                                                    <h3>Melding: {id}</h3>
+                                                    <h3>Feedback: {id}</h3>
                                                     <div className='modal-info'>
-                                                        <p className='name-col'>Navn: <span>{navn}</span></p>
+                                                        <p className='name-col'>Produkt: <span>{productName}</span></p>
                                                         <p>E-post: <span>{epost}</span></p>
                                                     </div>
                                                     <div className='modal-message'>

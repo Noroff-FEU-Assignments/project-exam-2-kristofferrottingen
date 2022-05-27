@@ -157,7 +157,7 @@
         }
     }
 
-    // Message admin page
+    // Message/feedback admin page
 
     .admin-message-page{
         padding: 60px 60px 100px 60px;
@@ -168,7 +168,12 @@
         }
 
         tbody {
-            vertical-align: none;
+            vertical-align: revert;
+
+            img {
+                max-width: 100px;
+                align-items: center;
+            }
 
             button{
                 border: none;
@@ -284,6 +289,10 @@
 
             table {
                 font-size: 13px;
+
+                img {
+                    max-width: 50px;
+                }
 
                 .name-col {
                     display: none;

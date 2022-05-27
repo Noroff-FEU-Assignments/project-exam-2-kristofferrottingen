@@ -11,6 +11,7 @@ import GetProducts from '../components/GetProducts';
 import { Tabs, Tab } from 'react-bootstrap';
 import AuthCon from '../context/Auth';
 import axios from 'axios';
+import EnquiryForm from '../components/enquiry/EnquiryForm';
 
 const userSchema = yup.object().shape({
 	username: yup.string().required("Brukernavnet ditt mangler eller er ikke gyldig"),
@@ -40,7 +41,6 @@ function DetailsPage() {
 
     async function onSubmit(storage) {
 
-        console.log(errors);
 
         storage = {
             title: "test"
@@ -51,7 +51,6 @@ function DetailsPage() {
 
             if(prodInfo.ok) {
                 const localStrg = await prodInfo.json();
-                console.log(localStrg.storage);
                 setCart(localStrg.storage);
             }
 			
@@ -147,6 +146,10 @@ function DetailsPage() {
                                 <p>{info.acf.tb}</p>
                             </Tab>
                         </Tabs>
+                    </div>
+                    <div className='enquiry-section'>
+                        <h4>Vi tar gjerne imot feedback på dette produktet!</h4>
+                        <EnquiryForm productName={info.acf.navn} productImg={info.acf.img1} />
                     </div>
                 </div>
             </div>
