@@ -3,11 +3,13 @@ import { baseUrl } from '../../api/Api';
 import HookAxios from '../../hooks/HookAxios';
 
 function AdminImageUpload() {
-    const [imageValue, setImageValue] = useState(null);
+    const [imageValue, setImageValue] = useState("");
 
-    console.log(imageValue);
+    console.log(imageValue.name);
 
     const url = baseUrl + "/wp/v2/media";
+
+    console.log(url);
 
     const useAxios = HookAxios();
 
